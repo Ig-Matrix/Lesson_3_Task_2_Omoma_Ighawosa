@@ -1,6 +1,6 @@
 ##CSS Task 2 | Responsive Blog
 
-Link To live site : 
+Link To live site : https://ig-matrix.github.io/Lesson_3_Task_2_Omoma_Ighawosa/
 
 ##How to run/test this project
 
