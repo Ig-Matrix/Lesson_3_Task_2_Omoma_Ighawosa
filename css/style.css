@@ -232,6 +232,13 @@ aside .site {
 
 .site > img {
     margin-right: 1rem;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+
+}
+
+.site > img:hover {
+    scale: 1.2;
 }
 
 .tablet-content {
