@@ -1,52 +1,340 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
 }
 
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
 }
 
 body {
-	line-height: 1;
+    line-height: 1;
 }
 
-ol, ul {
-	list-style: none;
+ol,
+ul {
+    list-style: none;
 }
 
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+    quotes: none;
 }
 
-blockquote::before, blockquote::after,
-q::before, q::after {
-	content: '';
-	content: none;
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+    content: "";
+    content: none;
 }
 
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 /* Do not write a css rule above here! Use the space below  */
 
-
 /* Write your css below here */
+
+.container {
+    height: 100vh;
+
+    /* background-color: lightblue; */
+    color: #f7f7f7;
+    display: grid;
+    grid-template: "header " 100px "section " 2fr "aside" 1fr "footer" 100px / 1fr;
+}
+
+header > img {
+    width: 200px;
+    height: auto;
+    display: none;
+}
+
+header {
+    grid-area: header;
+    background-color: #222;
+}
+
+nav {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav a {
+    margin-right: 0.5rem;
+    text-decoration: none;
+    background-color: #00a3cc;
+    padding: 0.5rem;
+    color: #f7f7f7;
+    font-size: 1.2rem;
+}
+
+section {
+    grid-area: section;
+    background-color: #333;
+}
+
+section h1 {
+    width: fit-content;
+    margin: auto;
+    font-size: 22px;
+    padding: 0.8rem 0 0;
+}
+
+section > ol {
+    padding: 0 1.5rem 1rem;
+    list-style-type: disc;
+    margin-top: 10px;
+
+    /* overflow-y: scroll; */
+}
+
+section ol li {
+    color: #00a3cc;
+    margin: 0.6rem 0;
+}
+
+aside {
+    padding: 2rem;
+    grid-area: aside;
+    background-color: #444;
+}
+
+aside h2 {
+    color: #4caf50;
+    margin: 0.5rem;
+}
+
+a[href*="https"] {
+    text-decoration: none;
+    color: wheat;
+    font-size: 1.3rem;
+}
+
+a[href*="https"]:hover {
+    text-decoration: underline;
+    color: #4caf50;
+}
+
+aside .site {
+    display: flex;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgb(77 97 155);
+}
+
+.site > span,
+.tablet-content span {
+    font-family: cursive;
+    margin-right: 1rem;
+    font-size: 1.2rem;
+    color: wheat;
+}
+
+.site > img {
+    margin-right: 1rem;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+
+}
+
+.site > img:hover {
+    scale: 1.2;
+}
+
+.tablet-content {
+    margin-top: 5rem;
+    padding: 2rem 0;
+    font-family: monospace;
+    display: none;
+    line-height: 1.5;
+}
+
+.tablet-content h4 {
+    padding: 0.5rem 0;
+    color: #4caf50;
+    font-size: 1.3rem;
+}
+
+.tablet-content .content {
+    margin: 1.4rem 0;
+}
+
+footer {
+    grid-area: footer;
+    background-color: #222;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+footer p {
+    margin-left: 0.8rem;
+}
+
+.tablet-content p {
+    font-size: 1rem;
+    margin: 1rem 0;
+}
+
+nav a:first-child {
+    border: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+nav a:last-child {
+    border: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+nav a:hover {
+    background-color: #0086aa;
+    color: #ccc;
+}
+
+@media screen and (width >= 768px) {
+    .container {
+        grid-template: "header header" 100px "section aside" 1fr "footer footer" 100px / 1fr 1fr;
+    }
+
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    header nav {
+        margin-right: 2rem;
+    }
+
+    header > img {
+        display: block;
+        width: 150px;
+    }
+
+    footer {
+        align-items: center;
+    }
+
+    .tablet-content {
+        display: block;
+    }
+}
+
+@media screen and (width >= 1024px) {
+    .container {
+        grid-template-columns: 2fr 1fr;
+
+        /* grid-template-rows: 100px 1fr 100px ; */
+    }
+
+    section ol li {
+        font-size: 1.2rem;
+    }
+
+    .tablet-content {
+        display: none;
+    }
+}
